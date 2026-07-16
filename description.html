@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Description — LanM-Tb | iGEM 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .section-tag {
+      background: #f1f5f9 !important;
+      color: #1e293b !important;
+    }
+    .btn-primary {
+      background: #6b7280 !important;
+      box-shadow: 0 4px 14px rgba(107, 114, 128, 0.35) !important;
+    }
+    .btn-primary:hover {
+      background: #374151 !important;
+    }
+    .highlight-box {
+      border-left-color: #6b7280;
+    }
+    .page-header {
+      background: linear-gradient(135deg, #1e293b, #334155, #475569);
+    }
+    .timeline::before {
+      background: #6b7280;
+    }
+    .timeline-item::before {
+      background: #6b7280;
+      box-shadow: 0 0 0 2px #6b7280;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="scrollProgressBar"><div class="bar-fill"></div></div>
+
+  <!-- ========== Search Modal ========== -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-modal-header">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search for keywords..." autofocus>
+        <button class="search-close" id="searchClose" aria-label="Close search">✕</button>
+      </div>
+      <div class="search-results" id="searchResults">
+        <p class="search-placeholder">Type to search across all pages...</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo">
+      <span class="logo-icon">🧬</span>
+      <span class="logo-text">LanM-Tb</span>
+    </a>
+
+    <ul class="navbar-links" id="navLinks">
+      <li><a href="index.html" data-icon="🏠">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="description.html" class="nav-dropdown-toggle active" data-icon="📋">Project</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="description.html" data-icon="📖">Description</a></li>
+          <li><a href="design.html" data-icon="🎨">Design</a></li>
+          <li><a href="engineering.html" data-icon="⚙️">Engineering</a></li>
+          <li><a href="results.html" data-icon="📊">Results</a></li>
+        </ul>
+      </li>
+      <li><a href="parts.html" data-icon="🧪">WetLab</a></li>
+      <li><a href="safety.html" data-icon="🛡️">Safety</a></li>
+      <li><a href="human-practices.html" data-icon="🤝">Human Practices</a></li>
+      <li class="nav-dropdown">
+        <a href="team.html" class="nav-dropdown-toggle" data-icon="👥">Team</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="team.html" data-icon="👨‍🔬">Members</a></li>
+          <li><a href="collaborations.html" data-icon="🤝">Collaborations</a></li>
+          <li><a href="attributions.html" data-icon="🏆">Attributions</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="navbar-actions">
+      <button class="search-btn" id="searchBtn" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <h1>Project Description</h1>
+    <p>Engineered lanmodulin variants for selective recovery of terbium from fluorescent lamp e-waste leachate</p>
+  </header>
+
+  <!-- ========== Background ========== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="scroll-reveal">Background</h2>
+
+      <h3 class="scroll-reveal">The Critical Importance of Terbium</h3>
+      <p class="scroll-reveal">
+        Terbium (Tb) is a heavy rare earth element (REE) classified as <strong>critical raw material</strong>
+        by the European Commission and the US Department of Energy. It is indispensable in modern
+        green technologies: Tb³⁺-doped phosphors enable the bright green emission in trichromatic
+        fluorescent lamps, LEDs, and plasma displays. Terbium is also essential in magnetostrictive
+        alloys (Terfenol-D) used in precision actuators and sensors.
+      </p>
+      <p class="scroll-reveal">
+        Despite its technological importance, Tb faces severe supply risk. China controls over
+        85% of global REE refining capacity, and geopolitical tensions frequently disrupt supply
+        chains. Recycling Tb from end-of-life products — particularly fluorescent lamps — could
+        significantly alleviate supply pressure while reducing the environmental burden of mining.
+      </p>
+
+      <h3 class="scroll-reveal">The E-Waste Opportunity</h3>
+      <p class="scroll-reveal">
+        Fluorescent lamps contain up to 15–20% rare earth phosphors by weight, with Tb
+        comprising 5–10% of the phosphor blend. With over 1 billion fluorescent lamps discarded
+        annually worldwide, this represents a substantial secondary source of terbium. Current
+        recycling rates for lamp phosphors remain below 5%, with most ending up in landfills.
+      </p>
+      <p class="scroll-reveal">
+        The standard recovery method — <strong>roasting + HCl leaching + D2EHPA solvent extraction</strong> —
+        achieves ~85% Tb leaching but suffers from poor selectivity (final Tb₄O₇ purity of only
+        64%), high chemical consumption, and generation of toxic organic waste streams. There is
+        a clear need for greener, more selective recovery technologies.
+      </p>
+
+      <h3 class="scroll-reveal">Lanmodulin: Nature's REE Binder</h3>
+      <p class="scroll-reveal">
+        Lanmodulin (LanM) is a recently discovered 12 kDa protein from the methylotrophic
+        bacterium <em>Methylobacterium extorquens</em>. Unlike other metal-binding proteins, LanM
+        has evolved to bind lanthanides (Ln³⁺) with extraordinary affinity — dissociation
+        constants (K<sub>d</sub>) in the <strong>picomolar to nanomolar range</strong> — while binding calcium,
+        its structural homologue, with 10⁸-fold lower affinity. This selectivity arises from
+        its four EF-hand domains, which undergo a conformational change upon Ln³⁺ binding.
+      </p>
+      <p class="scroll-reveal">
+        Importantly, LanM remains folded and functional under harsh acidic conditions (pH 2–3)
+        typical of e-waste leachate, making it an ideal scaffold for engineering selective
+        Tb biosensors and recovery systems.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== Problem Statement ========== -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="scroll-reveal">The Problem</h2>
+      <p class="scroll-reveal">
+        Current terbium recovery from fluorescent lamp e-waste relies on non-selective solvent
+        extraction using organophosphorus acids (e.g., D2EHPA), which co-extracts other REEs
+        (Eu, Y, La, Ce) resulting in low Tb purity. The process requires multiple stages,
+        large volumes of organic solvents, and generates acidic wastewater. No existing
+        biological method achieves selective Tb capture directly from lamp phosphor leachate
+        at industrially relevant concentrations and pH.
+      </p>
+      <div class="highlight-box scroll-reveal">
+        <h4>Key Challenge</h4>
+        <p>Develop a protein-based biosensor and capture system that selectively binds Tb³⁺ from complex e-waste leachate containing competing REEs and transition metals, operating at pH 2–3 with ppb-level sensitivity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Our Solution ========== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="scroll-reveal">Our Solution</h2>
+
+      <div class="card-stagger" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+        <div class="card scroll-glow">
+          <h3>🧬 Engineered Lanmodulin Variants</h3>
+          <p>We designed a panel of LanM variants with strategic tryptophan substitutions at positions adjacent to the EF-hand binding pockets. These Trp residues act as "sensitizers" that absorb UV light (280 nm) and transfer energy to bound Tb³⁺, enabling luminescence-based detection without extrinsic dyes.</p>
+        </div>
+        <div class="card scroll-glow">
+          <h3>🔦 Tb-Selective Luminescent Biosensor</h3>
+          <p>When Tb³⁺ binds the engineered binding pocket, tryptophan-sensitized luminescence produces bright green emission at 545 nm. The signal intensity correlates with Tb concentration, providing quantitative detection down to 3 ppb — outperforming current ICP-MS alternatives in cost and portability.</p>
+        </div>
+        <div class="card scroll-glow">
+          <h3>♻️ Recyclable Capture System</h3>
+          <p>Bound Tb³⁺ is released by lowering pH below 2 or adding competing chelators (EDTA/citrate), regenerating the protein for multiple capture cycles. We demonstrate stable performance over 10+ binding-release cycles with minimal loss of activity.</p>
+        </div>
+      </div>
+
+      <p class="scroll-reveal" style="margin-top:1.5rem;">
+        Our approach is a <strong>green alternative</strong> to solvent extraction: water-based,
+        protein-mediated, with minimal chemical input and no organic waste. By leveraging
+        LanM's natural REE affinity and acid stability, we achieve selective Tb recovery
+        directly from fluorescent lamp phosphor leachate at pH 2.5.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== References ========== -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="scroll-reveal">References</h2>
+      <ol class="scroll-reveal">
+        <li>Cotruvo, J. A. Jr. et al. (2018). Lanmodulin: A Highly Selective Lanthanide-Binding Protein from a Methylotrophic Bacterium. <em>Journal of the American Chemical Society</em>, 140(46), 15689–15693.</li>
+        <li>Deblonde, G. J. et al. (2021). Selective and Efficient Biomacromolecular Extraction of Rare-Earth Elements using Lanmodulin. <em>Nature</em>, 596, 104–108.</li>
+        <li>Mattocks, J. A. et al. (2020). Engineering Lanmodulin for Enhanced Rare-Earth Element Binding and Luminescent Sensing. <em>JACS Au</em>, 1(1), 66–73.</li>
+        <li>Park, D. M. et al. (2022). Bioadsorption of Rare Earth Elements through Cell Surface Display of Lanmodulin. <em>Nature Communications</em>, 13, 4192.</li>
+        <li>Binnemans, K. et al. (2013). Recycling of Rare Earths: A Critical Review. <em>Journal of Cleaner Production</em>, 51, 1–22.</li>
+        <li>Tunsu, C. et al. (2019). Enhancing rare-earth recovery from lamp phosphor waste. <em>Hydrometallurgy</em>, 185, 61–70.</li>
+      </ol>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">🧬 LanM-Tb</span>
+          <p>Engineered lanmodulin variants for selective terbium recovery from fluorescent lamp e-waste leachate.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Project</h4>
+          <a href="description.html">Description</a>
+          <a href="design.html">Design</a>
+          <a href="engineering.html">Engineering</a>
+          <a href="results.html">Results</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>Team</h4>
+          <a href="team.html">Members</a>
+          <a href="collaborations.html">Collaborations</a>
+          <a href="attributions.html">Attributions</a>
+          <a href="safety.html">Safety</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>More</h4>
+          <a href="parts.html">Parts</a>
+          <a href="human-practices.html">Human Practices</a>
+        </div>
+      </div>
+      <div class="footer-sponsors" style="border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem 0;">
+        <h4>Sponsored by</h4>
+        <div class="footer-sponsors-logos">
+          <a href="https://igem.org" target="_blank" rel="noopener" title="iGEM">
+            <img src="assets/images/igem-logo.svg" alt="iGEM Logo">
+          </a>
+          <a href="https://www.npl.edu.hk" target="_blank" rel="noopener" title="Po Leung Kuk Ngan Po Ling College">
+            <img src="assets/images/school-logo.png" alt="Po Leung Kuk Ngan Po Ling College">
+          </a>
+          <a href="https://www.twistbioscience.com" target="_blank" rel="noopener" title="Twist Bioscience">
+            <img src="assets/images/twist-bioscience.png" alt="Twist Bioscience Logo">
+          </a>
+          <a href="https://www.idtdna.com" target="_blank" rel="noopener" title="Integrated DNA Technologies">
+            <img src="assets/images/idt-logo.svg" alt="Integrated DNA Technologies Logo">
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 iGEM Team LanM-Tb. All rights reserved.</p>
+        <p>Contact: <a href="mailto:lanmtb@example.com">lanmtb@example.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      'use strict';
+      if (!CSS.supports('animation-timeline', 'scroll()')) {
+        var elements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-scale, .card-stagger > *');
+        if (elements.length > 0 && 'IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0) scale(1)';
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
+          elements.forEach(function(el) {
+            el.style.opacity = '0';
+            observer.observe(el);
+          });
+        }
+      }
+    })();
+  </script>
+
+  <!-- ========== Search Functionality ========== -->
+  <script>
+    (function() {
+      'use strict';
+      var searchBtn = document.getElementById('searchBtn');
+      var searchModal = document.getElementById('searchModal');
+      var searchClose = document.getElementById('searchClose');
+      var searchInput = document.getElementById('searchInput');
+      var searchResults = document.getElementById('searchResults');
+
+      if (searchBtn) {
+        searchBtn.addEventListener('click', function() {
+          searchModal.classList.add('active');
+          setTimeout(function() { searchInput.focus(); }, 100);
+        });
+      }
+
+      function closeSearch() {
+        searchModal.classList.remove('active');
+        searchInput.value = '';
+        searchResults.innerHTML = '<p class="search-placeholder">Type to search across all pages...</p>';
+      }
+
+      if (searchClose) searchClose.addEventListener('click', closeSearch);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && searchModal.classList.contains('active')) closeSearch();
+      });
+
+      searchModal.addEventListener('click', function(e) {
+        if (e.target === searchModal) closeSearch();
+      });
+
+      var searchableContent = [
+        { title: 'Home', url: 'index.html', keywords: 'lanmodulin terbium rare earth recovery e-waste fluorescent lamp protein engineering' },
+        { title: 'Project Description', url: 'description.html', keywords: 'problem solution terbium scarcity e-waste challenges green solution' },
+        { title: 'Design', url: 'design.html', keywords: 'tryptophan sensitized variants binding luminescence rational design' },
+        { title: 'Engineering', url: 'engineering.html', keywords: 'design build test learn cycle gene synthesis protein purification characterization' },
+        { title: 'Results', url: 'results.html', keywords: 'binding curves luminescence spectra selectivity assays leachate recovery data' },
+        { title: 'Parts', url: 'parts.html', keywords: 'biobrick parts registry plasmids sequences' },
+        { title: 'Safety', url: 'safety.html', keywords: 'responsible handling biosafety protocols environmental considerations' },
+        { title: 'Human Practices', url: 'human-practices.html', keywords: 'engagement recyclers industry experts community stakeholder' },
+        { title: 'Team', url: 'team.html', keywords: 'members students researchers advisors' },
+        { title: 'Collaborations', url: 'collaborations.html', keywords: 'partnerships collaboration teams institutions' },
+        { title: 'Attributions', url: 'attributions.html', keywords: 'acknowledgments sponsors support contributors' }
+      ];
+
+      if (searchInput) {
+        searchInput.addEventListener('input', function() {
+          var query = searchInput.value.toLowerCase().trim();
+          if (query.length === 0) {
+            searchResults.innerHTML = '<p class="search-placeholder">Type to search across all pages...</p>';
+            return;
+          }
+          var results = searchableContent.filter(function(item) {
+            return item.title.toLowerCase().includes(query) || item.keywords.toLowerCase().includes(query);
+          });
+          if (results.length === 0) {
+            searchResults.innerHTML = '<p class="search-placeholder">No results found for "' + query + '"</p>';
+            return;
+          }
+          var html = '';
+          results.forEach(function(item) {
+            var snippet = item.keywords.split(' ').slice(0, 10).join(' ') + '...';
+            html += '<div class="search-result-item" onclick="window.location.href=\'' + item.url + '\'">' +
+                    '<div class="search-result-title">' + item.title + '</div>' +
+                    '<div class="search-result-snippet">' + snippet + '</div>' +
+                    '<div class="search-result-page">' + item.url + '</div></div>';
+          });
+          searchResults.innerHTML = html;
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

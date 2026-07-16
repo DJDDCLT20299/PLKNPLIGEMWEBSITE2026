@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collaborations — LanM-Tb | iGEM 2026</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .section-tag { background: #f1f5f9 !important; color: #1e293b !important; }
+    .btn-primary { background: #6b7280 !important; }
+    .btn-primary:hover { background: #374151 !important; }
+    .highlight-box { border-left-color: #6b7280; }
+    .page-header { background: linear-gradient(135deg, #1e293b, #334155, #475569); }
+    .card { transition: all 0.3s ease; }
+  </style>
+</head>
+<body>
+
+  <div id="scrollProgressBar"><div class="bar-fill"></div></div>
+
+  <!-- ========== Search Modal ========== -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-modal-header">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search for keywords..." autofocus>
+        <button class="search-close" id="searchClose" aria-label="Close search">✕</button>
+      </div>
+      <div class="search-results" id="searchResults">
+        <p class="search-placeholder">Type to search across all pages...</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo"><span class="logo-icon">🧬</span><span class="logo-text">LanM-Tb</span></a>
+    <ul class="navbar-links" id="navLinks">
+      <li><a href="index.html" data-icon="🏠">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="description.html" class="nav-dropdown-toggle" data-icon="📋">Project</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="description.html" data-icon="📖">Description</a></li>
+          <li><a href="design.html" data-icon="🎨">Design</a></li>
+          <li><a href="engineering.html" data-icon="⚙️">Engineering</a></li>
+          <li><a href="results.html" data-icon="📊">Results</a></li>
+        </ul>
+      </li>
+      <li><a href="parts.html" data-icon="🧪">WetLab</a></li>
+      <li><a href="safety.html" data-icon="🛡️">Safety</a></li>
+      <li><a href="human-practices.html" data-icon="🤝">Human Practices</a></li>
+      <li class="nav-dropdown">
+        <a href="team.html" class="nav-dropdown-toggle" data-icon="👥">Team</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="team.html" data-icon="👨‍🔬">Members</a></li>
+          <li><a href="collaborations.html" data-icon="🤝">Collaborations</a></li>
+          <li><a href="attributions.html" data-icon="🏆">Attributions</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="search-btn" id="searchBtn" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <h1>Collaborations</h1>
+    <p>Working together with other iGEM teams and research partners</p>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="scroll-reveal">iGEM Team Collaborations</h2>
+
+      <div class="card-grid">
+        <div class="card scroll-reveal">
+          <h3>🧪 Team UniLausanne — REE Part Collection</h3>
+          <p><strong>What we did:</strong> Shared LanM variant sequences and characterization data with the UniLausanne iGEM team, who were developing a curli fiber display system for REE recovery. We contributed our D26W/N58W variant to their part collection.</p>
+          <p><strong>Outcome:</strong> Joint publication of 4 LanM-based REE binding parts in the iGEM Registry. Cross-validation of Tb binding affinity between our ITC data and their whole-cell binding assays.</p>
+        </div>
+
+        <div class="card scroll-reveal">
+          <h3>🧪 Team TU-Delft — Biosensor Workshop</h3>
+          <p><strong>What we did:</strong> Co-hosted a virtual workshop on "Protein-Based Biosensors for Environmental Monitoring" with TU-Delft. Shared our Trp-sensitization approach; they shared their FRET-based heavy metal sensor designs.</p>
+          <p><strong>Outcome:</strong> Comparison of Trp-sensitized vs. FRET-based lanthanide detection. Joint poster at iGEM Meetup.</p>
+        </div>
+
+        <div class="card scroll-reveal">
+          <h3>🧪 Team NPL-HongKong — E-Waste Collection</h3>
+          <p><strong>What we did:</strong> Partnered with a local Hong Kong iGEM team to co-organize a city-wide fluorescent lamp e-waste collection drive. We provided educational materials on REE recycling; they provided collection logistics.</p>
+          <p><strong>Outcome:</strong> 200 kg of fluorescent lamps collected and properly recycled. Joint social media campaign reached 10K+ people.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="scroll-reveal">External Partnerships</h2>
+      <div class="card-grid">
+        <div class="card scroll-reveal">
+          <h3>🏭 E-Waste Recyclers Association (HK)</h3>
+          <p>Provided access to de-mercurated fluorescent lamp phosphors, shared industry requirements for pH/acidity tolerance, and offered feedback on scalability of the protein-based approach.</p>
+        </div>
+        <div class="card scroll-reveal">
+          <h3>🔬 Twist Bioscience</h3>
+          <p>Sponsored gene synthesis for all 7 LanM variants. Provided express synthesis service with codon optimization for <em>E. coli</em> expression.</p>
+        </div>
+        <div class="card scroll-reveal">
+          <h3>🧪 Integrated DNA Technologies (IDT)</h3>
+          <p>Supplied gBlocks for Gibson assembly and primers for colony PCR screening.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">🧬 LanM-Tb</span>
+          <p>Engineered lanmodulin variants for selective terbium recovery from fluorescent lamp e-waste leachate.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Project</h4>
+          <a href="description.html">Description</a>
+          <a href="design.html">Design</a>
+          <a href="engineering.html">Engineering</a>
+          <a href="results.html">Results</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>Team</h4>
+          <a href="team.html">Members</a>
+          <a href="collaborations.html">Collaborations</a>
+          <a href="attributions.html">Attributions</a>
+          <a href="safety.html">Safety</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>More</h4>
+          <a href="parts.html">Parts</a>
+          <a href="human-practices.html">Human Practices</a>
+        </div>
+      </div>
+      <div class="footer-sponsors" style="border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem 0;">
+        <h4>Sponsored by</h4>
+        <div class="footer-sponsors-logos">
+          <a href="https://igem.org" target="_blank" rel="noopener" title="iGEM"><img src="assets/images/igem-logo.svg" alt="iGEM Logo"></a>
+          <a href="https://www.npl.edu.hk" target="_blank" rel="noopener" title="Po Leung Kuk Ngan Po Ling College"><img src="assets/images/school-logo.png" alt="Po Leung Kuk Ngan Po Ling College"></a>
+          <a href="https://www.twistbioscience.com" target="_blank" rel="noopener" title="Twist Bioscience"><img src="assets/images/twist-bioscience.png" alt="Twist Bioscience Logo"></a>
+          <a href="https://www.idtdna.com" target="_blank" rel="noopener" title="Integrated DNA Technologies"><img src="assets/images/idt-logo.svg" alt="Integrated DNA Technologies Logo"></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 iGEM Team LanM-Tb. All rights reserved.</p>
+        <p>Contact: <a href="mailto:lanmtb@example.com">lanmtb@example.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      'use strict';
+      if (!CSS.supports('animation-timeline', 'scroll()')) {
+        var el = document.querySelectorAll('.scroll-reveal');
+        if ('IntersectionObserver' in window) {
+          var obs = new IntersectionObserver(function(e) {
+            e.forEach(function(entry) {
+              if (entry.isIntersecting) { entry.target.style.opacity = '1'; obs.unobserve(entry.target); }
+            });
+          }, { threshold: 0.1 });
+          el.forEach(function(e) { e.style.opacity = '0'; obs.observe(e); });
+        }
+      }
+    })();
+  </script>
+  <script src="js/search.js"></script>
+</body>
+</html>

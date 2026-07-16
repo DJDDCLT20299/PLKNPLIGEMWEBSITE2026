@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering — LanM-Tb | iGEM 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .section-tag { background: #f1f5f9 !important; color: #1e293b !important; }
+    .btn-primary { background: #6b7280 !important; }
+    .btn-primary:hover { background: #374151 !important; }
+    .highlight-box { border-left-color: #6b7280; }
+    .page-header { background: linear-gradient(135deg, #1e293b, #334155, #475569); }
+    .timeline::before { background: #6b7280; }
+    .timeline-item::before { background: #6b7280; box-shadow: 0 0 0 2px #6b7280; }
+  </style>
+</head>
+<body>
+
+  <div id="scrollProgressBar"><div class="bar-fill"></div></div>
+
+  <!-- ========== Search Modal ========== -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-modal-header">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search for keywords..." autofocus>
+        <button class="search-close" id="searchClose" aria-label="Close search">✕</button>
+      </div>
+      <div class="search-results" id="searchResults">
+        <p class="search-placeholder">Type to search across all pages...</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo"><span class="logo-icon">🧬</span><span class="logo-text">LanM-Tb</span></a>
+    <ul class="navbar-links" id="navLinks">
+      <li><a href="index.html" data-icon="🏠">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="description.html" class="nav-dropdown-toggle" data-icon="📋">Project</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="description.html" data-icon="📖">Description</a></li>
+          <li><a href="design.html" data-icon="🎨">Design</a></li>
+          <li><a href="engineering.html" data-icon="⚙️">Engineering</a></li>
+          <li><a href="results.html" data-icon="📊">Results</a></li>
+        </ul>
+      </li>
+      <li><a href="parts.html" data-icon="🧪">WetLab</a></li>
+      <li><a href="safety.html" data-icon="🛡️">Safety</a></li>
+      <li><a href="human-practices.html" data-icon="🤝">Human Practices</a></li>
+      <li class="nav-dropdown">
+        <a href="team.html" class="nav-dropdown-toggle" data-icon="👥">Team</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="team.html" data-icon="👨‍🔬">Members</a></li>
+          <li><a href="collaborations.html" data-icon="🤝">Collaborations</a></li>
+          <li><a href="attributions.html" data-icon="🏆">Attributions</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="search-btn" id="searchBtn" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <h1>Engineering</h1>
+    <p>Our iterative Design-Build-Test-Learn cycle for LanM variant development</p>
+  </header>
+
+  <!-- ========== DBTL Overview ========== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="scroll-reveal">Engineering Cycle Overview</h2>
+      <p class="scroll-reveal">
+        We followed the iGEM Design-Build-Test-Learn (DBTL) cycle across three major iterations
+        to engineer, characterize, and validate our tryptophan-sensitized lanmodulin variants
+        for selective terbium recovery.
+      </p>
+
+      <div class="card-grid scroll-reveal" style="margin-top: 2rem;">
+        <div class="card">
+          <h3>📐 Design</h3>
+          <p>Structural analysis of LanM (PDB: 6MHT), identification of Trp substitution sites within 8 Å of Tb³⁺ binding pocket, and in silico mutagenesis screening.</p>
+        </div>
+        <div class="card">
+          <h3>🧪 Build</h3>
+          <p>Gene synthesis (Twist Bioscience), Gibson assembly into pET-28a(+), transformation into <em>E. coli</em> BL21(DE3), and protein expression/purification.</p>
+        </div>
+        <div class="card">
+          <h3>📊 Test</h3>
+          <p>Tb³⁺ binding affinity (ITC), luminescence spectroscopy (λ<sub>ex</sub>=280 nm, λ<sub>em</sub>=545 nm), selectivity assays against competing metals, and e-waste leachate tests.</p>
+        </div>
+        <div class="card">
+          <h3>📝 Learn</h3>
+          <p>Each iteration informed the next: from single variants to combinatorial optimization, from buffer conditions to real-world leachate testing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Iterations ========== -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="scroll-reveal">Engineering Iterations</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item scroll-reveal">
+          <h3>Iteration 1: Single Variant Screening</h3>
+          <p><strong>Design:</strong> Three single Trp variants (D26W, N58W, D102W) designed based on LanM crystal structure. Each targets a different EF-hand domain.</p>
+          <p><strong>Build:</strong> Genes synthesized (Twist Bioscience), cloned into pET-28a(+), expressed in <em>E. coli</em> BL21(DE3) with IPTG induction (0.5 mM, 18°C, 16 h). Proteins purified by Ni-NTA affinity chromatography with >95% purity by SDS-PAGE.</p>
+          <p><strong>Test:</strong> Tb³⁺ binding measured by tryptophan fluorescence quenching (λ<sub>ex</sub> 280 nm, λ<sub>em</sub> 340 nm). Sensitized Tb luminescence measured at 545 nm. All three variants showed Tb-dependent luminescence, with <strong>N58W</strong> showing the highest signal-to-noise ratio.</p>
+          <p><strong>Learn:</strong> Position N58 in EF-hand 2 provides optimal Trp-Tb distance (~6 Å) and orientation for energy transfer. Single variants give moderate luminescence — combinatorial variants may enhance signal through additive energy transfer.</p>
+        </div>
+
+        <div class="timeline-item scroll-reveal">
+          <h3>Iteration 2: Combinatorial Variants &amp; Optimization</h3>
+          <p><strong>Design:</strong> Double (D26W/N58W, N58W/D102W) and triple (D26W/N58W/D102W) variants designed. Additional optimization: pH range (1.5–7.0), buffer composition, and Tb³⁺ concentration range (1 nM – 100 µM).</p>
+          <p><strong>Build:</strong> Same expression and purification protocol as Iteration 1. Protein yields: 8–15 mg/L culture.</p>
+          <p><strong>Test:</strong> Double variant <strong>D26W/N58W</strong> showed 2.3-fold enhanced luminescence vs. N58W alone. Triple variant showed only 1.5-fold enhancement, suggesting positional interference. Optimal pH: 2.5–4.0. Limit of detection (LOD): <strong>3 ppb</strong> Tb³⁺.</p>
+          <p><strong>Learn:</strong> Double Trp substitution provides synergistic energy transfer. pH 2.5 is ideal for e-waste leachate compatibility. Luminescence signal is linear from 10 ppb to 10 ppm Tb³⁺.</p>
+        </div>
+
+        <div class="timeline-item scroll-reveal">
+          <h3>Iteration 3: Real E-Waste Validation</h3>
+          <p><strong>Design:</strong> Validation with real fluorescent lamp phosphor leachate. Additional modifications: SpyTag fusion for magnetic bead immobilization (capture system).</p>
+          <p><strong>Build:</strong> D26W/N58W variant expressed with C-terminal SpyTag. Immobilized on SpyCatcher-magnetic agarose beads (50 µL beads per 1 mL lysate).</p>
+          <p><strong>Test:</strong> Leachate from crushed fluorescent lamp phosphors (HCl, pH 2.5) containing Tb, Eu, Y, La, Ce, and transition metals (Fe, Cu, Zn). LanM-SpyTag beads captured <strong>99% Tb³⁺</strong> with minimal co-binding of other REEs or transition metals. Elution with 50 mM citrate, pH 1.5 recovered <strong>85%</strong> bound Tb. Beads reused over 10 cycles with &lt;10% activity loss.</p>
+          <p><strong>Learn:</strong> Protein-based Tb recovery from real e-waste is feasible and selective. Multiple variants are contributed as iGEM BioBricks for future REE recovery applications.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Modeling ========== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="scroll-reveal">Computational Modeling</h2>
+      <p class="scroll-reveal">
+        To guide our design, we performed molecular dynamics simulations of WT and variant LanM
+        structures. Key findings:
+      </p>
+      <ul class="scroll-reveal">
+        <li><strong>Trp rotamer analysis:</strong> The N58W substitution adopts a stable rotamer with the indole ring oriented toward the Tb³⁺ binding pocket (Trp-Nε–Tb distance: 5.8 ± 0.4 Å).</li>
+        <li><strong>Binding energy calculations:</strong> MM-GBSA calculations predicted ΔΔG of −1.2 kcal/mol for N58W relative to WT, consistent with preserved or slightly enhanced Tb affinity.</li>
+        <li><strong>pH stability:</strong> Constant-pH MD simulations at pH 2.5 showed that the EF-hand scaffold remains folded, with key coordinating residues (D, E, N) maintaining their side-chain conformations.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">🧬 LanM-Tb</span>
+          <p>Engineered lanmodulin variants for selective terbium recovery from fluorescent lamp e-waste leachate.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Project</h4>
+          <a href="description.html">Description</a>
+          <a href="design.html">Design</a>
+          <a href="engineering.html">Engineering</a>
+          <a href="results.html">Results</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>Team</h4>
+          <a href="team.html">Members</a>
+          <a href="collaborations.html">Collaborations</a>
+          <a href="attributions.html">Attributions</a>
+          <a href="safety.html">Safety</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>More</h4>
+          <a href="parts.html">Parts</a>
+          <a href="human-practices.html">Human Practices</a>
+        </div>
+      </div>
+      <div class="footer-sponsors" style="border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem 0;">
+        <h4>Sponsored by</h4>
+        <div class="footer-sponsors-logos">
+          <a href="https://igem.org" target="_blank" rel="noopener" title="iGEM"><img src="assets/images/igem-logo.svg" alt="iGEM Logo"></a>
+          <a href="https://www.npl.edu.hk" target="_blank" rel="noopener" title="Po Leung Kuk Ngan Po Ling College"><img src="assets/images/school-logo.png" alt="Po Leung Kuk Ngan Po Ling College"></a>
+          <a href="https://www.twistbioscience.com" target="_blank" rel="noopener" title="Twist Bioscience"><img src="assets/images/twist-bioscience.png" alt="Twist Bioscience Logo"></a>
+          <a href="https://www.idtdna.com" target="_blank" rel="noopener" title="Integrated DNA Technologies"><img src="assets/images/idt-logo.svg" alt="Integrated DNA Technologies Logo"></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 iGEM Team LanM-Tb. All rights reserved.</p>
+        <p>Contact: <a href="mailto:lanmtb@example.com">lanmtb@example.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      'use strict';
+      if (!CSS.supports('animation-timeline', 'scroll()')) {
+        var el = document.querySelectorAll('.scroll-reveal, .card-grid, .timeline-item');
+        if ('IntersectionObserver' in window) {
+          var obs = new IntersectionObserver(function(e) {
+            e.forEach(function(entry) {
+              if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; obs.unobserve(entry.target); }
+            });
+          }, { threshold: 0.1 });
+          el.forEach(function(e) { e.style.opacity = '0'; obs.observe(e); });
+        }
+      }
+    })();
+  </script>
+  <script src="js/search.js"></script>
+</body>
+</html>

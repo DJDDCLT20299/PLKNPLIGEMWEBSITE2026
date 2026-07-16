@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team — LanM-Tb | iGEM 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .section-tag { background: #f1f5f9 !important; color: #1e293b !important; }
+    .page-header { background: linear-gradient(135deg, #1e293b, #334155, #475569); }
+  </style>
+</head>
+<body>
+
+  <div id="scrollProgressBar"><div class="bar-fill"></div></div>
+
+  <!-- ========== Search Modal ========== -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-modal-header">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search for keywords..." autofocus>
+        <button class="search-close" id="searchClose" aria-label="Close search">✕</button>
+      </div>
+      <div class="search-results" id="searchResults">
+        <p class="search-placeholder">Type to search across all pages...</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo"><span class="logo-icon">🧬</span><span class="logo-text">LanM-Tb</span></a>
+    <ul class="navbar-links" id="navLinks">
+      <li><a href="index.html" data-icon="🏠">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="description.html" class="nav-dropdown-toggle" data-icon="📋">Project</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="description.html" data-icon="📖">Description</a></li>
+          <li><a href="design.html" data-icon="🎨">Design</a></li>
+          <li><a href="engineering.html" data-icon="⚙️">Engineering</a></li>
+          <li><a href="results.html" data-icon="📊">Results</a></li>
+        </ul>
+      </li>
+      <li><a href="parts.html" data-icon="🧪">WetLab</a></li>
+      <li><a href="safety.html" data-icon="🛡️">Safety</a></li>
+      <li><a href="human-practices.html" data-icon="🤝">Human Practices</a></li>
+      <li class="nav-dropdown">
+        <a href="team.html" class="nav-dropdown-toggle" data-icon="👥">Team</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="team.html" data-icon="👨‍🔬">Members</a></li>
+          <li><a href="collaborations.html" data-icon="🤝">Collaborations</a></li>
+          <li><a href="attributions.html" data-icon="🏆">Attributions</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="search-btn" id="searchBtn" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <h1>Meet the LanM-Tb Team</h1>
+    <p>The people behind the project</p>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="scroll-reveal">Student Team Members</h2>
+      <div class="team-grid">
+        <div class="team-member scroll-scale">
+          <div style="width: 160px; height: 160px; border-radius: 50%; background: #f1f5f9; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; border: 3px solid #6b7280;">
+            <span style="font-size: 3rem;">🧑‍🔬</span>
+          </div>
+          <h4>Sarah Chen</h4>
+          <p class="role" style="color:#6b7280;">Team Lead &amp; Protein Design</p>
+          <p>Led project strategy, designed LanM variant library, performed structural analysis and MD simulations.</p>
+        </div>
+        <div class="team-member scroll-scale">
+          <div style="width: 160px; height: 160px; border-radius: 50%; background: #f1f5f9; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; border: 3px solid #6b7280;">
+            <span style="font-size: 3rem;">🧑‍🔬</span>
+          </div>
+          <h4>James Wong</h4>
+          <p class="role" style="color:#6b7280;">Molecular Biology Lead</p>
+          <p>Cloned all LanM variants, managed Gibson assembly, performed protein expression and purification.</p>
+        </div>
+        <div class="team-member scroll-scale">
+          <div style="width: 160px; height: 160px; border-radius: 50%; background: #f1f5f9; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; border: 3px solid #6b7280;">
+            <span style="font-size: 3rem;">🧑‍🔬</span>
+          </div>
+          <h4>Priya Patel</h4>
+          <p class="role" style="color:#6b7280;">Biochemistry Lead</p>
+          <p>Performed ITC binding assays, luminescence spectroscopy, selectivity screening, and data analysis.</p>
+        </div>
+        <div class="team-member scroll-scale">
+          <div style="width: 160px; height: 160px; border-radius: 50%; background: #f1f5f9; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; border: 3px solid #6b7280;">
+            <span style="font-size: 3rem;">🧑‍🔬</span>
+          </div>
+          <h4>Alex Kim</h4>
+          <p class="role" style="color:#6b7280;">E-Waste &amp; Applications Lead</p>
+          <p>Developed the lamp phosphor leaching protocol, managed magnetic bead capture system, performed leachate recovery tests.</p>
+        </div>
+        <div class="team-member scroll-scale">
+          <div style="width: 160px; height: 160px; border-radius: 50%; background: #f1f5f9; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; border: 3px solid #6b7280;">
+            <span style="font-size: 3rem;">🧑‍🔬</span>
+          </div>
+          <h4>Maya Johnson</h4>
+          <p class="role" style="color:#6b7280;">Human Practices Lead</p>
+          <p>Led stakeholder engagement, organized school workshops, managed the e-waste collection drive, authored policy brief.</p>
+        </div>
+        <div class="team-member scroll-scale">
+          <div style="width: 160px; height: 160px; border-radius: 50%; background: #f1f5f9; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; border: 3px solid #6b7280;">
+            <span style="font-size: 3rem;">🧑‍🔬</span>
+          </div>
+          <h4>David Liu</h4>
+          <p class="role" style="color:#6b7280;">Modeling &amp; Web Lead</p>
+          <p>Performed MD simulations and MM-GBSA calculations, designed and built the team website.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="scroll-reveal">Instructors &amp; Advisors</h2>
+      <div class="team-grid">
+        <div class="team-member scroll-scale">
+          <div style="width: 160px; height: 160px; border-radius: 50%; background: #e2e8f0; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; border: 3px solid #475569;">
+            <span style="font-size: 3rem;">👩‍🏫</span>
+          </div>
+          <h4>Prof. Lisa Chang</h4>
+          <p class="role" style="color:#475569;">Primary PI</p>
+          <p>Professor of Synthetic Biology, Department of Biological Sciences. Provided lab space, funding, and project oversight.</p>
+        </div>
+        <div class="team-member scroll-scale">
+          <div style="width: 160px; height: 160px; border-radius: 50%; background: #e2e8f0; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; border: 3px solid #475569;">
+            <span style="font-size: 3rem;">👨‍🏫</span>
+          </div>
+          <h4>Dr. Michael Ho</h4>
+          <p class="role" style="color:#475569;">Advisor</p>
+          <p>Research Assistant Professor specializing in protein engineering. Guided experimental design and troubleshooting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">🧬 LanM-Tb</span>
+          <p>Engineered lanmodulin variants for selective terbium recovery from fluorescent lamp e-waste leachate.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Project</h4>
+          <a href="description.html">Description</a>
+          <a href="design.html">Design</a>
+          <a href="engineering.html">Engineering</a>
+          <a href="results.html">Results</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>Team</h4>
+          <a href="team.html">Members</a>
+          <a href="collaborations.html">Collaborations</a>
+          <a href="attributions.html">Attributions</a>
+          <a href="safety.html">Safety</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>More</h4>
+          <a href="parts.html">Parts</a>
+          <a href="human-practices.html">Human Practices</a>
+        </div>
+      </div>
+      <div class="footer-sponsors" style="border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem 0;">
+        <h4>Sponsored by</h4>
+        <div class="footer-sponsors-logos">
+          <a href="https://igem.org" target="_blank" rel="noopener" title="iGEM"><img src="assets/images/igem-logo.svg" alt="iGEM Logo"></a>
+          <a href="https://www.npl.edu.hk" target="_blank" rel="noopener" title="Po Leung Kuk Ngan Po Ling College"><img src="assets/images/school-logo.png" alt="Po Leung Kuk Ngan Po Ling College"></a>
+          <a href="https://www.twistbioscience.com" target="_blank" rel="noopener" title="Twist Bioscience"><img src="assets/images/twist-bioscience.png" alt="Twist Bioscience Logo"></a>
+          <a href="https://www.idtdna.com" target="_blank" rel="noopener" title="Integrated DNA Technologies"><img src="assets/images/idt-logo.svg" alt="Integrated DNA Technologies Logo"></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 iGEM Team LanM-Tb. All rights reserved.</p>
+        <p>Contact: <a href="mailto:lanmtb@example.com">lanmtb@example.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      'use strict';
+      if (!CSS.supports('animation-timeline', 'scroll()')) {
+        var el = document.querySelectorAll('.scroll-reveal, .scroll-scale, .team-member');
+        if ('IntersectionObserver' in window) {
+          var obs = new IntersectionObserver(function(e) {
+            e.forEach(function(entry) {
+              if (entry.isIntersecting) { entry.target.style.opacity = '1'; obs.unobserve(entry.target); }
+            });
+          }, { threshold: 0.1 });
+          el.forEach(function(e) { e.style.opacity = '0'; obs.observe(e); });
+        }
+      }
+    })();
+  </script>
+  <script src="js/search.js"></script>
+</body>
+</html>

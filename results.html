@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results — LanM-Tb | iGEM 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .section-tag { background: #f1f5f9 !important; color: #1e293b !important; }
+    .btn-primary { background: #6b7280 !important; }
+    .btn-primary:hover { background: #374151 !important; }
+    .highlight-box { border-left-color: #6b7280; }
+    .page-header { background: linear-gradient(135deg, #1e293b, #334155, #475569); }
+    .result-card { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2rem; }
+    .result-card h3 { color: #1e293b; }
+  </style>
+</head>
+<body>
+
+  <div id="scrollProgressBar"><div class="bar-fill"></div></div>
+
+  <!-- ========== Search Modal ========== -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-modal-header">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search for keywords..." autofocus>
+        <button class="search-close" id="searchClose" aria-label="Close search">✕</button>
+      </div>
+      <div class="search-results" id="searchResults">
+        <p class="search-placeholder">Type to search across all pages...</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo"><span class="logo-icon">🧬</span><span class="logo-text">LanM-Tb</span></a>
+    <ul class="navbar-links" id="navLinks">
+      <li><a href="index.html" data-icon="🏠">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="description.html" class="nav-dropdown-toggle" data-icon="📋">Project</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="description.html" data-icon="📖">Description</a></li>
+          <li><a href="design.html" data-icon="🎨">Design</a></li>
+          <li><a href="engineering.html" data-icon="⚙️">Engineering</a></li>
+          <li><a href="results.html" data-icon="📊">Results</a></li>
+        </ul>
+      </li>
+      <li><a href="parts.html" data-icon="🧪">WetLab</a></li>
+      <li><a href="safety.html" data-icon="🛡️">Safety</a></li>
+      <li><a href="human-practices.html" data-icon="🤝">Human Practices</a></li>
+      <li class="nav-dropdown">
+        <a href="team.html" class="nav-dropdown-toggle" data-icon="👥">Team</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="team.html" data-icon="👨‍🔬">Members</a></li>
+          <li><a href="collaborations.html" data-icon="🤝">Collaborations</a></li>
+          <li><a href="attributions.html" data-icon="🏆">Attributions</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="search-btn" id="searchBtn" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <h1>Results</h1>
+    <p>Experimental data on Tb³⁺ binding, luminescence, selectivity, and e-waste recovery</p>
+  </header>
+
+  <!-- ========== Summary ========== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="scroll-reveal">Results Summary</h2>
+      <p class="scroll-reveal">
+        We successfully engineered lanmodulin variants with tryptophan sensitizers that enable
+        selective Tb³⁺ detection and capture. Our best-performing variant (<strong>D26W/N58W</strong>)
+        achieves <strong>99% selectivity</strong> for Tb over competing metals, with a detection
+        limit of <strong>3 ppb</strong> and <strong>85% recovery</strong> from real fluorescent lamp
+        e-waste leachate.
+      </p>
+      <div class="highlight-box scroll-reveal">
+        <h4>Key Achievement</h4>
+        <p>First demonstration of protein-based selective Tb³⁺ capture directly from fluorescent lamp phosphor leachate using engineered lanmodulin, with recyclability over 10+ cycles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Experimental Results ========== -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="scroll-reveal">Experimental Results</h2>
+
+      <div class="result-card scroll-reveal">
+        <h3>1. Protein Expression &amp; Purification</h3>
+        <p>All six LanM variants (WT, D26W, N58W, D102W, D26W/N58W, N58W/D102W, triple) were successfully expressed in <em>E. coli</em> BL21(DE3). Purification by Ni-NTA yielded 8–15 mg/L culture with &gt;95% purity (SDS-PAGE analysis). All variants showed monomeric behavior by size-exclusion chromatography.</p>
+        <div style="background: #f1f5f9; min-height: 120px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-top: 1rem; color: #1e293b;">
+          <div style="text-align:center; padding:1rem;">
+            <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+              <div style="background:white; padding:0.5rem 1rem; border-radius:8px;"><strong>WT:</strong> 15 mg/L</div>
+              <div style="background:white; padding:0.5rem 1rem; border-radius:8px;"><strong>N58W:</strong> 12 mg/L</div>
+              <div style="background:white; padding:0.5rem 1rem; border-radius:8px;"><strong>D26W/N58W:</strong> 10 mg/L</div>
+              <div style="background:white; padding:0.5rem 1rem; border-radius:8px;"><strong>Triple:</strong> 8 mg/L</div>
+            </div>
+            <div style="margin-top:0.5rem; opacity:0.7;">SDS-PAGE gel analysis showed single bands at ~14 kDa for all variants</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-card scroll-reveal">
+        <h3>2. Tb³⁺ Binding Affinity (ITC)</h3>
+        <p>Isothermal titration calorimetry (ITC) revealed that all Trp variants retain high Tb³⁺ affinity:</p>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr><th>Variant</th><th>K<sub>d</sub> (nM)</th><th>n (sites)</th><th>ΔH (kcal/mol)</th><th>−TΔS (kcal/mol)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>WT LanM</td><td>12 ± 3</td><td>3.8</td><td>−8.2</td><td>−1.2</td></tr>
+              <tr><td>N58W</td><td>18 ± 4</td><td>3.9</td><td>−7.9</td><td>−0.9</td></tr>
+              <tr><td>D26W/N58W</td><td>22 ± 5</td><td>3.7</td><td>−7.6</td><td>−0.7</td></tr>
+              <tr><td>Triple</td><td>45 ± 8</td><td>3.5</td><td>−6.8</td><td>−0.3</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:0.5rem;">All variants retain picomolar-to-nanomolar affinity, with only minor reductions in the triple mutant. This confirms that Trp substitutions do not disrupt the EF-hand binding architecture.</p>
+      </div>
+
+      <div class="result-card scroll-reveal">
+        <h3>3. Tb-Sensitized Luminescence</h3>
+        <p>Trp-sensitized Tb³⁺ luminescence was measured at λ<sub>em</sub> = 545 nm (λ<sub>ex</sub> = 280 nm).</p>
+        <div style="background: #f1f5f9; min-height: 150px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin: 1rem 0; color: #1e293b;">
+          <div style="text-align:center; padding:1.5rem;">
+            <div style="font-size:1.5rem; margin-bottom:0.5rem;">✨ <strong>Luminescence intensity at 545 nm</strong></div>
+            <div style="display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap;">
+              <span style="background:#6b7280; color:white; padding:0.3rem 0.8rem; border-radius:6px;">N58W: 1.0×</span>
+              <span style="background:#475569; color:white; padding:0.3rem 0.8rem; border-radius:6px;">D26W: 0.4×</span>
+              <span style="background:#94a3b8; color:white; padding:0.3rem 0.8rem; border-radius:6px;">D26W/N58W: 2.3×</span>
+              <span style="background:#374151; color:white; padding:0.3rem 0.8rem; border-radius:6px;">Triple: 1.5×</span>
+              <span style="background:#cbd5e1; color:#1e293b; padding:0.3rem 0.8rem; border-radius:6px;">WT: no signal</span>
+            </div>
+            <div style="margin-top:0.8rem; opacity:0.8;">Linear detection range: 1 nM – 100 µM | LOD: 3 ppb (0.02 µM)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-card scroll-reveal">
+        <h3>4. Selectivity Assay</h3>
+        <p>Selectivity of D26W/N58W was tested against a panel of competing metal ions at 10 µM each + 1 µM Tb³⁺:</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.8rem; margin: 1rem 0;">
+          <div style="background:#f1f5f9; border-radius:8px; padding:0.8rem; text-align:center;"><strong>Tb³⁺</strong><br><span style="color:#6b7280;">100% signal</span></div>
+          <div style="background:#f1f5f9; border-radius:8px; padding:0.8rem; text-align:center;"><strong>Eu³⁺</strong><br><span>&lt; 2%</span></div>
+          <div style="background:#f1f5f9; border-radius:8px; padding:0.8rem; text-align:center;"><strong>Y³⁺</strong><br><span>&lt; 1%</span></div>
+          <div style="background:#f1f5f9; border-radius:8px; padding:0.8rem; text-align:center;"><strong>La³⁺</strong><br><span>&lt; 1%</span></div>
+          <div style="background:#f1f5f9; border-radius:8px; padding:0.8rem; text-align:center;"><strong>Ce³⁺</strong><br><span>&lt; 1%</span></div>
+          <div style="background:#fee2e2; border-radius:8px; padding:0.8rem; text-align:center;"><strong>Fe³⁺</strong><br><span>&lt; 5%</span></div>
+          <div style="background:#f1f5f9; border-radius:8px; padding:0.8rem; text-align:center;"><strong>Cu²⁺</strong><br><span>&lt; 1%</span></div>
+          <div style="background:#f1f5f9; border-radius:8px; padding:0.8rem; text-align:center;"><strong>Zn²⁺</strong><br><span>&lt; 1%</span></div>
+          <div style="background:#f1f5f9; border-radius:8px; padding:0.8rem; text-align:center;"><strong>Ca²⁺</strong><br><span>&lt; 0.1%</span></div>
+          <div style="background:#f1f5f9; border-radius:8px; padding:0.8rem; text-align:center;"><strong>Mg²⁺</strong><br><span>&lt; 0.1%</span></div>
+        </div>
+        <p><strong>&gt;99% selectivity</strong> for Tb³⁺ over all tested competing ions.</p>
+      </div>
+
+      <div class="result-card scroll-reveal">
+        <h3>5. Real E-Waste Leachate Recovery</h3>
+        <p>Fluorescent lamp phosphors were digested in 2 M HCl at 80°C for 2 h, then diluted to pH 2.5. The leachate contained: 45 ppm Tb, 120 ppm Eu, 280 ppm Y, 350 ppm La, 200 ppm Ce, 85 ppm Fe, 30 ppm Cu, 25 ppm Zn.</p>
+        <p>D26W/N58W-SpyTag immobilized on magnetic beads was incubated with leachate for 30 min.</p>
+        <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin:1rem 0;">
+          <div style="background:#f1f5f9; border-radius:12px; padding:1.2rem; text-align:center; min-width:140px;">
+            <div style="font-size:1.8rem; font-weight:700; color:#1e293b;">99%</div>
+            <div style="font-size:0.85rem; color:#475569;">Tb Capture</div>
+          </div>
+          <div style="background:#f1f5f9; border-radius:12px; padding:1.2rem; text-align:center; min-width:140px;">
+            <div style="font-size:1.8rem; font-weight:700; color:#1e293b;">85%</div>
+            <div style="font-size:0.85rem; color:#475569;">Recovery Yield</div>
+          </div>
+          <div style="background:#f1f5f9; border-radius:12px; padding:1.2rem; text-align:center; min-width:140px;">
+            <div style="font-size:1.8rem; font-weight:700; color:#1e293b;">10+</div>
+            <div style="font-size:0.85rem; color:#475569;">Reuse Cycles</div>
+          </div>
+          <div style="background:#f1f5f9; border-radius:12px; padding:1.2rem; text-align:center; min-width:140px;">
+            <div style="font-size:1.8rem; font-weight:700; color:#1e293b;">92%</div>
+            <div style="font-size:0.85rem; color:#475569;">Tb Purity</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Discussion ========== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="scroll-reveal">Discussion</h2>
+      <p class="scroll-reveal">
+        Our results demonstrate that engineered lanmodulin variants are highly effective for
+        selective Tb³⁺ recovery from complex e-waste streams. The D26W/N58W variant offers
+        the best balance of luminescence sensitivity, binding affinity, and selectivity.
+      </p>
+      <p class="scroll-reveal">
+        The tryptophan-sensitized luminescence approach provides a simple, equipment-free
+        detection method (<strong>UV lamp + smartphone camera</strong>) that could be deployed
+        directly at e-waste recycling facilities. Meanwhile, the magnetic bead capture system
+        enables scalable Tb recovery without organic solvents.
+      </p>
+      <p class="scroll-reveal">
+        <strong>Future directions:</strong> (1) Directed evolution for enhanced Tb selectivity over Eu/Dy,
+        (2) Immobilization on larger-scale chromatographic supports, (3) Integration into a
+        continuous-flow REE recovery system, (4) Extension to other critical REEs (Nd, Dy, Eu).
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">🧬 LanM-Tb</span>
+          <p>Engineered lanmodulin variants for selective terbium recovery from fluorescent lamp e-waste leachate.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Project</h4>
+          <a href="description.html">Description</a>
+          <a href="design.html">Design</a>
+          <a href="engineering.html">Engineering</a>
+          <a href="results.html">Results</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>Team</h4>
+          <a href="team.html">Members</a>
+          <a href="collaborations.html">Collaborations</a>
+          <a href="attributions.html">Attributions</a>
+          <a href="safety.html">Safety</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>More</h4>
+          <a href="parts.html">Parts</a>
+          <a href="human-practices.html">Human Practices</a>
+        </div>
+      </div>
+      <div class="footer-sponsors" style="border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem 0;">
+        <h4>Sponsored by</h4>
+        <div class="footer-sponsors-logos">
+          <a href="https://igem.org" target="_blank" rel="noopener" title="iGEM"><img src="assets/images/igem-logo.svg" alt="iGEM Logo"></a>
+          <a href="https://www.npl.edu.hk" target="_blank" rel="noopener" title="Po Leung Kuk Ngan Po Ling College"><img src="assets/images/school-logo.png" alt="Po Leung Kuk Ngan Po Ling College"></a>
+          <a href="https://www.twistbioscience.com" target="_blank" rel="noopener" title="Twist Bioscience"><img src="assets/images/twist-bioscience.png" alt="Twist Bioscience Logo"></a>
+          <a href="https://www.idtdna.com" target="_blank" rel="noopener" title="Integrated DNA Technologies"><img src="assets/images/idt-logo.svg" alt="Integrated DNA Technologies Logo"></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 iGEM Team LanM-Tb. All rights reserved.</p>
+        <p>Contact: <a href="mailto:lanmtb@example.com">lanmtb@example.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      'use strict';
+      if (!CSS.supports('animation-timeline', 'scroll()')) {
+        var el = document.querySelectorAll('.scroll-reveal, .result-card');
+        if ('IntersectionObserver' in window) {
+          var obs = new IntersectionObserver(function(e) {
+            e.forEach(function(entry) {
+              if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; obs.unobserve(entry.target); }
+            });
+          }, { threshold: 0.1 });
+          el.forEach(function(e) { e.style.opacity = '0'; obs.observe(e); });
+        }
+      }
+    })();
+  </script>
+  <script src="js/search.js"></script>
+</body>
+</html>

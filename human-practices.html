@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Human Practices — LanM-Tb | iGEM 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .section-tag { background: #f1f5f9 !important; color: #1e293b !important; }
+    .btn-primary { background: #6b7280 !important; }
+    .highlight-box { border-left-color: #6b7280; }
+    .page-header { background: linear-gradient(135deg, #1e293b, #334155, #475569); }
+  </style>
+</head>
+<body>
+
+  <div id="scrollProgressBar"><div class="bar-fill"></div></div>
+
+  <!-- ========== Search Modal ========== -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-modal-header">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search for keywords..." autofocus>
+        <button class="search-close" id="searchClose" aria-label="Close search">✕</button>
+      </div>
+      <div class="search-results" id="searchResults">
+        <p class="search-placeholder">Type to search across all pages...</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo"><span class="logo-icon">🧬</span><span class="logo-text">LanM-Tb</span></a>
+    <ul class="navbar-links" id="navLinks">
+      <li><a href="index.html" data-icon="🏠">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="description.html" class="nav-dropdown-toggle" data-icon="📋">Project</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="description.html" data-icon="📖">Description</a></li>
+          <li><a href="design.html" data-icon="🎨">Design</a></li>
+          <li><a href="engineering.html" data-icon="⚙️">Engineering</a></li>
+          <li><a href="results.html" data-icon="📊">Results</a></li>
+        </ul>
+      </li>
+      <li><a href="parts.html" data-icon="🧪">WetLab</a></li>
+      <li><a href="safety.html" data-icon="🛡️">Safety</a></li>
+      <li><a href="human-practices.html" data-icon="🤝">Human Practices</a></li>
+      <li class="nav-dropdown">
+        <a href="team.html" class="nav-dropdown-toggle" data-icon="👥">Team</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="team.html" data-icon="👨‍🔬">Members</a></li>
+          <li><a href="collaborations.html" data-icon="🤝">Collaborations</a></li>
+          <li><a href="attributions.html" data-icon="🏆">Attributions</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="search-btn" id="searchBtn" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <h1>Human Practices</h1>
+    <p>Engaging with stakeholders to shape responsible REE recovery technology</p>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="scroll-reveal">Integrated Human Practices</h2>
+      <p class="scroll-reveal">
+        From the outset, we engaged with stakeholders across the REE value chain — from
+        e-waste recyclers and metallurgists to environmental regulators and policy makers.
+        Their insights fundamentally shaped our project design and goals.
+      </p>
+      <div class="highlight-box scroll-reveal">
+        <h4>Key Insight</h4>
+        <p>
+          E-waste recyclers emphasized that any biological REE recovery method must work at
+          <strong>pH &lt; 3</strong> (typical leachate conditions) and tolerate competing metals.
+          This directly motivated our focus on LanM's acid stability and the tryptophan-sensitized
+          selectivity mechanism.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="scroll-reveal">Stakeholder Engagement</h2>
+      <div class="table-wrapper scroll-reveal">
+        <table>
+          <thead>
+            <tr>
+              <th>Stakeholder</th>
+              <th>Type</th>
+              <th>Key Feedback</th>
+              <th>Impact on Project</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dr. Joseph Cotruvo — Penn State (LanM discoverer)</td>
+              <td>Academic Expert</td>
+              <td>Recommended EF-hand positions for Trp substitution; shared structural insights on LanM pH stability</td>
+              <td>Informed our N58W design — the Trp position shown to have optimal antenna effect</td>
+            </tr>
+            <tr>
+              <td>E-Waste Recyclers Association (HK)</td>
+              <td>Industry</td>
+              <td>"Must work at pH 2–3 without pre-neutralization. Cannot tolerate organic solvents in our facility."</td>
+              <td>Focused our entire approach on acidic, aqueous-phase protein binding. Abandoned organic extraction approaches.</td>
+            </tr>
+            <tr>
+              <td>Dr. Koen Binnemans — KU Leuven (REE recycling expert)</td>
+              <td>Academic Expert</td>
+              <td>"Tb/Eu/Dy separation is the hardest challenge. Protein selectivity must exceed 95% to be viable."</td>
+              <td>Set our selectivity target &gt;95%. Achieved 99% Tb selectivity through LanM engineering.</td>
+            </tr>
+            <tr>
+              <td>Environmental Protection Department (HK)</td>
+              <td>Regulator</td>
+              <td>"Need to demonstrate that the protein itself is biodegradable and the process generates minimal secondary waste."</td>
+              <td>Added biodegradability assessment. Designed citrate-based elution (fully biodegradable) instead of EDTA.</td>
+            </tr>
+            <tr>
+              <td>Critical Materials Institute (Ames Lab)</td>
+              <td>Research Consortium</td>
+              <td>Shared data on industrial REE leachate composition and current D2EHPA performance benchmarks</td>
+              <td>Used real leachate composition data to design our selectivity panel. Benchmarked against D2EHPA performance.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="scroll-reveal">Education &amp; Public Engagement</h2>
+      <p class="scroll-reveal">
+        We organized several outreach activities to raise awareness about REE criticality,
+        e-waste recycling, and synthetic biology solutions:
+      </p>
+      <div class="card-grid scroll-reveal">
+        <div class="card">
+          <h3>🏫 School Workshops</h3>
+          <p>Visited 6 local secondary schools with a "Rare Earths in Your Pocket" workshop. Students extracted Tb from crushed fluorescent lamps using our LanM protein and observed the green luminescence under UV light. <em>~300 students reached.</em></p>
+        </div>
+        <div class="card">
+          <h3>📱 Social Media Campaign</h3>
+          <p>#LanMTbChallenge on Instagram/TikTok: Followers guessed which everyday items contain terbium. Educational short-form videos on REE mining, supply chains, and bio-recycling. <em>50K+ cumulative views.</em></p>
+        </div>
+        <div class="card">
+          <h3>♻️ E-Waste Collection Drive</h3>
+          <p>Partnered with a local e-waste recycler to collect 200 kg of fluorescent lamps from the community. Donated proceeds to a local environmental NGO. Educational booth on REE recycling at the collection site.</p>
+        </div>
+        <div class="card">
+          <h3>📋 Policy Brief</h3>
+          <p>Submitted a policy brief to the Hong Kong Environmental Bureau recommending incentives for biological REE recovery R&D and extended producer responsibility for lamp phosphors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="scroll-reveal">Sustainable Development Goals</h2>
+      <p class="scroll-reveal">
+        Our project directly addresses the following UN Sustainable Development Goals:
+      </p>
+      <div class="card-grid scroll-reveal">
+        <div class="card">
+          <h3>🎯 SDG 9 — Industry, Innovation &amp; Infrastructure</h3>
+          <p>Advancing bio-based REE recovery technology for sustainable industrial processes.</p>
+        </div>
+        <div class="card">
+          <h3>🎯 SDG 11 — Sustainable Cities &amp; Communities</h3>
+          <p>Diverting fluorescent lamp e-waste from landfills through urban mining.</p>
+        </div>
+        <div class="card">
+          <h3>🎯 SDG 12 — Responsible Consumption &amp; Production</h3>
+          <p>Enabling closed-loop recycling of critical materials, reducing primary mining demand.</p>
+        </div>
+        <div class="card">
+          <h3>🎯 SDG 14 — Life Below Water</h3>
+          <p>Reducing REE mining pollution (radioactive thorium tailings, acid mine drainage).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">🧬 LanM-Tb</span>
+          <p>Engineered lanmodulin variants for selective terbium recovery from fluorescent lamp e-waste leachate.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Project</h4>
+          <a href="description.html">Description</a>
+          <a href="design.html">Design</a>
+          <a href="engineering.html">Engineering</a>
+          <a href="results.html">Results</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>Team</h4>
+          <a href="team.html">Members</a>
+          <a href="collaborations.html">Collaborations</a>
+          <a href="attributions.html">Attributions</a>
+          <a href="safety.html">Safety</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>More</h4>
+          <a href="parts.html">Parts</a>
+          <a href="human-practices.html">Human Practices</a>
+        </div>
+      </div>
+      <div class="footer-sponsors" style="border-top: 1px solid rgba(255,255,255,0.1); padding: 2rem 0;">
+        <h4>Sponsored by</h4>
+        <div class="footer-sponsors-logos">
+          <a href="https://igem.org" target="_blank" rel="noopener" title="iGEM"><img src="assets/images/igem-logo.svg" alt="iGEM Logo"></a>
+          <a href="https://www.npl.edu.hk" target="_blank" rel="noopener" title="Po Leung Kuk Ngan Po Ling College"><img src="assets/images/school-logo.png" alt="Po Leung Kuk Ngan Po Ling College"></a>
+          <a href="https://www.twistbioscience.com" target="_blank" rel="noopener" title="Twist Bioscience"><img src="assets/images/twist-bioscience.png" alt="Twist Bioscience Logo"></a>
+          <a href="https://www.idtdna.com" target="_blank" rel="noopener" title="Integrated DNA Technologies"><img src="assets/images/idt-logo.svg" alt="Integrated DNA Technologies Logo"></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 iGEM Team LanM-Tb. All rights reserved.</p>
+        <p>Contact: <a href="mailto:lanmtb@example.com">lanmtb@example.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      'use strict';
+      if (!CSS.supports('animation-timeline', 'scroll()')) {
+        var el = document.querySelectorAll('.scroll-reveal, .card-grid');
+        if ('IntersectionObserver' in window) {
+          var obs = new IntersectionObserver(function(e) {
+            e.forEach(function(entry) {
+              if (entry.isIntersecting) { entry.target.style.opacity = '1'; observer.unobserve(entry.target); }
+            });
+          }, { threshold: 0.1 });
+          el.forEach(function(e) { e.style.opacity = '0'; obs.observe(e); });
+        }
+      }
+    })();
+  </script>
+  <script src="js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LanM-Tb — iGEM 2026 | Engineered Lanmodulin for Selective Terbium Recovery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ============================================
+       Index-page specific overrides
+       ============================================ */
+
+    /* Remove body top padding for full-height hero */
+    body {
+      padding-top: 0 !important;
+    }
+
+    /* --- All sections white background --- */
+    .section-alt {
+      background: #ffffff !important;
+    }
+
+    /* --- Cards with image top --- */
+    .about-card-image {
+      width: 100%;
+      height: 180px;
+      border-radius: 16px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(255,255,255,0.9) 100%);
+      pointer-events: none;
+    }
+
+    .about-card-image span {
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    .about-card {
+      padding: 0 0 2rem 0 !important;
+      overflow: hidden;
+    }
+
+    .about-card-body {
+      padding: 0 1.75rem;
+    }
+
+    /* --- Explore cards — unified gray theme --- */
+    .explore-card-bg {
+      background: linear-gradient(135deg, #374151, #4b5563) !important;
+    }
+
+    .explore-card-content {
+      background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.25) 100%) !important;
+    }
+
+    .explore-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .explore-card {
+      min-height: 220px !important;
+    }
+
+    .explore-card-content {
+      min-height: 220px !important;
+      padding: 1.75rem !important;
+    }
+
+    /* --- Parallax separator --- */
+    .parallax-section {
+      position: relative;
+      height: 300px;
+      background: linear-gradient(135deg, #1e293b, #334155, #475569);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .parallax-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+
+    .parallax-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+    }
+
+    .parallax-content h2 {
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .parallax-content p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.1rem;
+    }
+
+    /* --- CTA section --- */
+    .cta-section {
+      background: #ffffff !important;
+    }
+
+    .cta-content h2 {
+      color: var(--color-text) !important;
+    }
+
+    .cta-content p {
+      color: var(--color-text-light) !important;
+    }
+
+    .btn-outline.light {
+      border-color: #6b7280 !important;
+      color: #6b7280 !important;
+    }
+
+    .btn-outline.light:hover {
+      background: #6b7280 !important;
+      color: #fff !important;
+    }
+
+    .btn-primary {
+      background: #6b7280 !important;
+      box-shadow: 0 4px 14px rgba(107, 114, 128, 0.35) !important;
+    }
+
+    .btn-primary:hover {
+      background: #374151 !important;
+      box-shadow: 0 6px 20px rgba(107, 114, 128, 0.4) !important;
+    }
+
+    .btn-outline {
+      border-color: #6b7280 !important;
+      color: #6b7280 !important;
+    }
+
+    .btn-outline:hover {
+      background: #6b7280 !important;
+      color: #fff !important;
+    }
+
+    .section-tag {
+      background: #f1f5f9 !important;
+      color: #1e293b !important;
+    }
+
+    /* --- Stats bar style --- */
+    .stats-bar {
+      border-top: 1px solid var(--color-border);
+    }
+
+    .stats-bar::before {
+      background: linear-gradient(90deg, #1e293b, #475569, #94a3b8);
+    }
+
+    .stat-number {
+      color: #1e293b;
+    }
+
+    /* --- Hero pin wrapper: scroll distance for the 4-phase animation --- */
+    .hero-pin-wrap {
+      position: relative;
+      height: 400vh;               /* ~1 screen of scroll per phase */
+    }
+
+    /* --- Hero: sticky/pinned, full-screen; canvas paints the narrative --- */
+    .hero {
+      background: #0f172a;         /* matches canvas Phase 1 slate base */
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      min-height: 100vh;
+      margin-top: 0;
+      padding-top: calc(var(--nav-height) + 1rem);
+    }
+
+    /* Canvas fills the hero behind the text; mouse tracked on window so
+       hero buttons stay clickable. */
+    #heroCanvas {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 2; }
+    .hero-scroll  { position: absolute; z-index: 2; }
+
+    /* --- Fallback: no canvas / reduced-motion → animated gradient --- */
+    .hero.hero-fallback {
+      background:
+        radial-gradient(circle at center, rgba(16,185,129,0.28), rgba(15,23,42,0) 60%),
+        linear-gradient(135deg, #0f172a 0%, #134e4a 55%, #065f46 100%);
+      background-size: 200% 200%;
+      animation: heroFallbackGlow 12s ease-in-out infinite;
+    }
+
+    @keyframes heroFallbackGlow {
+      0%, 100% { background-position: 50% 0%; }
+      50%      { background-position: 50% 100%; }
+    }
+
+    .about-card::before {
+      background: linear-gradient(90deg, #6b7280, #94a3b8);
+    }
+
+    .explore-card-bg {
+      background: linear-gradient(135deg, #374151, #4b5563) !important;
+    }
+
+    /* --- Gray accent highlights --- */
+    .highlight-box {
+      border-left-color: #6b7280;
+    }
+
+    /* --- Scroll-driven: hero content sticky parallax --- */
+    .hero-parallax-layer {
+      will-change: transform;
+    }
+
+    /* --- Gray glow accent --- */
+    .tb-glow {
+      text-shadow: 0 0 30px rgba(148, 163, 184, 0.3);
+    }
+
+    .tb-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #94a3b8, #cbd5e1);
+      color: #0f172a;
+      padding: 0.2rem 0.8rem;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* --- Stats counter: real values --- */
+    .stat-number[data-target="99"]::after {
+      content: '%';
+    }
+
+    /* --- Section id for scroll-based nav highlight --- */
+    section[id] {
+      scroll-margin-top: var(--nav-height);
+    }
+
+    /* Mobile fix for parallax */
+    @media (max-width: 768px) {
+      .parallax-section {
+        height: 200px;
+      }
+      .about-card-image {
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scrollProgressBar"><div class="bar-fill"></div></div>
+
+  <!-- ========== Search Modal ========== -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-modal-header">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search for keywords..." autofocus>
+        <button class="search-close" id="searchClose" aria-label="Close search">✕</button>
+      </div>
+      <div class="search-results" id="searchResults">
+        <p class="search-placeholder">Type to search across all pages...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Navigation ========== -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo">
+      <span class="logo-icon">🧬</span>
+      <span class="logo-text">LanM-Tb</span>
+    </a>
+
+    <ul class="navbar-links" id="navLinks">
+      <li><a href="index.html" class="active" data-icon="🏠">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="description.html" class="nav-dropdown-toggle" data-icon="📋">Project</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="description.html" data-icon="📖">Description</a></li>
+          <li><a href="design.html" data-icon="🎨">Design</a></li>
+          <li><a href="engineering.html" data-icon="⚙️">Engineering</a></li>
+          <li><a href="results.html" data-icon="📊">Results</a></li>
+        </ul>
+      </li>
+      <li><a href="parts.html" data-icon="🧪">WetLab</a></li>
+      <li><a href="safety.html" data-icon="🛡️">Safety</a></li>
+      <li><a href="human-practices.html" data-icon="🤝">Human Practices</a></li>
+      <li class="nav-dropdown">
+        <a href="team.html" class="nav-dropdown-toggle" data-icon="👥">Team</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="team.html" data-icon="👨‍🔬">Members</a></li>
+          <li><a href="collaborations.html" data-icon="🤝">Collaborations</a></li>
+          <li><a href="attributions.html" data-icon="🏆">Attributions</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="navbar-actions">
+      <button class="search-btn" id="searchBtn" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== Hero Section (pinned for scroll animation) ========== -->
+  <div class="hero-pin-wrap" id="heroPinWrap">
+    <section class="hero" id="heroSection">
+      <canvas id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero-content hero-parallax-layer" id="heroParallax">
+        <span class="hero-badge">iGEM 2026</span>
+        <h1 class="tb-glow">LanM-Tb</h1>
+        <p class="hero-subtitle">
+          Engineered lanmodulin variants for the selective recovery of terbium (Tb³⁺)
+          from fluorescent lamp e-waste leachate — turning waste into opportunity
+          through synthetic biology.
+        </p>
+        <div class="hero-buttons">
+          <a href="description.html" class="btn btn-primary">Explore Our Project</a>
+          <a href="design.html" class="btn btn-outline">View Design</a>
+        </div>
+      </div>
+      <div class="hero-scroll" id="heroScroll" style="text-align:center;">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow">↓</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== Stats Bar ========== -->
+  <section class="stats-bar scroll-reveal">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" data-target="99">0</span>
+          <span class="stat-label">Tb³⁺ Selectivity (%)</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="3">0</span>
+          <span class="stat-label">LanM Variants</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="2">0</span>
+          <span class="stat-label">pH Working Range</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="85">0</span>
+          <span class="stat-label">Recovery Rate (%)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== About / Image Cards ========== -->
+  <section class="section about-section">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">Our Project</span>
+        <h2>Why Terbium &amp; Lanmodulin?</h2>
+        <p class="section-desc">Recovering critical rare earth elements from e-waste using engineered proteins</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card scroll-reveal-left" style="animation-range: entry-crossing 0% entry-crossing 25%;">
+          <div class="about-card-image" style="background: linear-gradient(135deg, #f1f5f9, #e2e8f0);">
+            <span>💡</span>
+          </div>
+          <div class="about-card-body">
+            <h3>The Problem</h3>
+            <p>Terbium (Tb) is a critical rare earth element essential for green technologies — LEDs, wind turbines, and electric vehicles. Yet fluorescent lamp e-waste containing Tb is mostly landfilled. Current recovery relies on harsh solvent extraction with poor selectivity.</p>
+          </div>
+        </div>
+        <div class="about-card scroll-reveal" style="animation-range: entry-crossing 0% entry-crossing 25%;">
+          <div class="about-card-image" style="background: linear-gradient(135deg, #e2e8f0, #cbd5e1);">
+            <span>🧬</span>
+          </div>
+          <div class="about-card-body">
+            <h3>Our Solution</h3>
+            <p>We engineered lanmodulin (LanM) — a naturally occurring rare earth-binding protein — with tryptophan sensitizers that enable selective Tb³⁺ capture and detection via luminescence. Our variants bind Tb at <strong>pH 2–3</strong> with <strong>99% selectivity</strong> over other metals.</p>
+          </div>
+        </div>
+        <div class="about-card scroll-reveal-right" style="animation-range: entry-crossing 0% entry-crossing 25%;">
+          <div class="about-card-image" style="background: linear-gradient(135deg, #cbd5e1, #94a3b8);">
+            <span>🌍</span>
+          </div>
+          <div class="about-card-body">
+            <h3>Impact</h3>
+            <p>A green, protein-based alternative to toxic solvent extraction. Our biosensor works at <strong>parts-per-billion</strong> sensitivity in real e-waste leachate, enabling a circular economy for critical rare earth elements with minimal environmental footprint.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== The Science Section (scroll-driven reveals) ========== -->
+  <section class="section section-alt" id="science">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">The Science</span>
+        <h2>How Lanmodulin Selectively Binds Terbium</h2>
+        <p class="section-desc">From protein structure to luminescent detection</p>
+      </div>
+
+      <div class="card-stagger" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; text-align:center;">
+        <div class="card scroll-glow">
+          <h3>🔬 EF-Hand Domains</h3>
+          <p>Lanmodulin features four EF-hand calcium-binding motifs that have evolved to bind lanthanides (Ln³⁺) with picomolar affinity — 100 million times tighter than calcium. Each domain coordinates Tb³⁺ via conserved glutamate/aspartate residues.</p>
+        </div>
+        <div class="card scroll-glow">
+          <h3>✨ Tryptophan Sensitization</h3>
+          <p>By engineering tryptophan residues near the binding pocket, we exploit the "antenna effect" — Trp absorbs UV light (280 nm) and transfers energy to bound Tb³⁺, which emits characteristic green luminescence at 545 nm for ultrasensitive detection.</p>
+        </div>
+        <div class="card scroll-glow">
+          <h3>🧪 Acid-Stable Binding</h3>
+          <p>Unlike conventional REE-binding proteins, LanM retains its structure and binding affinity at pH 2–3 — exactly the conditions of e-waste leachate. This allows direct Tb capture from acid-digested fluorescent lamp phosphors without pH adjustment.</p>
+        </div>
+      </div>
+
+      <!-- Scroll-driven progress/info bars -->
+      <div class="scroll-reveal" style="margin-top: 3rem;">
+        <h3 style="text-align:center; margin-bottom:2rem;">Performance Metrics</h3>
+        <div style="max-width: 700px; margin: 0 auto;">
+          <div style="margin-bottom: 1.5rem;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+              <strong>Tb³⁺ Binding Selectivity</strong>
+              <span>&gt;99%</span>
+            </div>
+            <div style="height:12px; background:#e2e8f0; border-radius:6px; overflow:hidden;">
+              <div class="scroll-progress-inner" style="width:99%; height:100%;"></div>
+            </div>
+          </div>
+          <div style="margin-bottom: 1.5rem;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+              <strong>Recovery from E-Waste Leachate</strong>
+              <span>85%</span>
+            </div>
+            <div style="height:12px; background:#e2e8f0; border-radius:6px; overflow:hidden;">
+              <div class="scroll-progress-inner" style="width:85%; height:100%;"></div>
+            </div>
+          </div>
+          <div style="margin-bottom: 1.5rem;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+              <strong>Detection Limit</strong>
+              <span>3 ppb</span>
+            </div>
+            <div style="height:12px; background:#e2e8f0; border-radius:6px; overflow:hidden;">
+              <div class="scroll-progress-inner" style="width:97%; height:100%;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+              <strong>Reusability (cycles)</strong>
+              <span>10+</span>
+            </div>
+            <div style="height:12px; background:#e2e8f0; border-radius:6px; overflow:hidden;">
+              <div class="scroll-progress-inner" style="width:90%; height:100%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Parallax Divider 1 ========== -->
+  <div class="parallax-section scroll-parallax">
+    <div class="parallax-content">
+      <p>From e-waste to resource</p>
+      <h2>Turning Trash into Terbium</h2>
+    </div>
+  </div>
+
+  <!-- ========== Explore Sections ========== -->
+  <section class="section explore-section">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">Explore</span>
+        <h2>Discover Our Project</h2>
+        <p class="section-desc">Dive deeper into every aspect of LanM-Tb</p>
+      </div>
+      <div class="explore-grid">
+        <a href="description.html" class="explore-card scroll-scale">
+          <div class="explore-card-bg"></div>
+          <div class="explore-card-content">
+            <span class="explore-icon">📖</span>
+            <h3>Description</h3>
+            <p>The problem of terbium scarcity, e-waste challenges, and how engineered lanmodulin provides a green solution.</p>
+            <span class="explore-link">Learn more →</span>
+          </div>
+        </a>
+        <a href="design.html" class="explore-card scroll-scale">
+          <div class="explore-card-bg"></div>
+          <div class="explore-card-content">
+            <span class="explore-icon">📐</span>
+            <h3>Design</h3>
+            <p>How we rationally designed tryptophan-sensitized LanM variants with enhanced Tb binding and luminescence.</p>
+            <span class="explore-link">Learn more →</span>
+          </div>
+        </a>
+        <a href="engineering.html" class="explore-card scroll-scale">
+          <div class="explore-card-bg"></div>
+          <div class="explore-card-content">
+            <span class="explore-icon">⚙️</span>
+            <h3>Engineering</h3>
+            <p>Our iterative Design-Build-Test-Learn cycle: from gene synthesis to protein purification and characterization.</p>
+            <span class="explore-link">Learn more →</span>
+          </div>
+        </a>
+        <a href="results.html" class="explore-card scroll-scale">
+          <div class="explore-card-bg"></div>
+          <div class="explore-card-content">
+            <span class="explore-icon">📊</span>
+            <h3>Results</h3>
+            <p>Binding curves, luminescence spectra, selectivity assays, and e-waste leachate recovery data.</p>
+            <span class="explore-link">Learn more →</span>
+          </div>
+        </a>
+        <a href="safety.html" class="explore-card scroll-scale">
+          <div class="explore-card-bg"></div>
+          <div class="explore-card-content">
+            <span class="explore-icon">🛡️</span>
+            <h3>Safety</h3>
+            <p>Responsible handling of REEs, biosafety protocols, and environmental considerations.</p>
+            <span class="explore-link">Learn more →</span>
+          </div>
+        </a>
+        <a href="human-practices.html" class="explore-card scroll-scale">
+          <div class="explore-card-bg"></div>
+          <div class="explore-card-content">
+            <span class="explore-icon">🤝</span>
+            <h3>Human Practices</h3>
+            <p>Engagement with e-waste recyclers, REE industry experts, and the broader community.</p>
+            <span class="explore-link">Learn more →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Parallax Divider 2 ========== -->
+  <div class="parallax-section scroll-parallax">
+    <div class="parallax-content">
+      <p>Get in touch with us</p>
+      <h2>Interested in REE Recovery?</h2>
+    </div>
+  </div>
+
+  <!-- ========== CTA Section ========== -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content scroll-reveal">
+        <h2>Join the Circular Economy</h2>
+        <p>Explore the full details of our project — from protein engineering to real-world e-waste recovery.</p>
+        <div class="cta-buttons">
+          <a href="description.html" class="btn btn-primary btn-lg">Read Our Story</a>
+          <a href="team.html" class="btn btn-outline btn-lg light">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">🧬 LanM-Tb</span>
+          <p>Engineered lanmodulin variants for selective terbium recovery from fluorescent lamp e-waste leachate.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Project</h4>
+          <a href="description.html">Description</a>
+          <a href="design.html">Design</a>
+          <a href="engineering.html">Engineering</a>
+          <a href="results.html">Results</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>Team</h4>
+          <a href="team.html">Members</a>
+          <a href="collaborations.html">Collaborations</a>
+          <a href="attributions.html">Attributions</a>
+          <a href="safety.html">Safety</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>More</h4>
+          <a href="parts.html">Parts</a>
+          <a href="human-practices.html">Human Practices</a>
+        </div>
+      </div>
+
+      <!-- ========== Sponsor Logos ========== -->
+      <div class="footer-sponsors">
+        <h4>Sponsored by</h4>
+        <div class="footer-sponsors-logos">
+          <a href="https://igem.org" target="_blank" rel="noopener" title="iGEM">
+            <img src="assets/images/igem-logo.svg" alt="iGEM Logo">
+          </a>
+          <a href="https://www.npl.edu.hk" target="_blank" rel="noopener" title="Po Leung Kuk Ngan Po Ling College">
+            <img src="assets/images/school-logo.png" alt="Po Leung Kuk Ngan Po Ling College">
+          </a>
+          <a href="https://www.twistbioscience.com" target="_blank" rel="noopener" title="Twist Bioscience">
+            <img src="assets/images/twist-bioscience.png" alt="Twist Bioscience Logo">
+          </a>
+          <a href="https://www.idtdna.com" target="_blank" rel="noopener" title="Integrated DNA Technologies">
+            <img src="assets/images/idt-logo.svg" alt="Integrated DNA Technologies Logo">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 iGEM Team LanM-Tb. All rights reserved.</p>
+        <p>Contact: <a href="mailto:lanmtb@example.com">lanmtb@example.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <script src="js/main.js"></script>
+  <script>
+    /* ========== Index-only: Parallax & scroll effects ========== */
+    (function() {
+      'use strict';
+
+      // --- Hero text fade (canvas handles the phased visuals) ---
+      // Text/badge/buttons fade out across Phase 1→2 so the Spark and
+      // Expansion own the screen before the impurity flood arrives.
+      var heroPinWrap = document.getElementById('heroPinWrap');
+      var heroContent = document.getElementById('heroParallax');
+      var heroScroll = document.getElementById('heroScroll');
+      var ticking = false;
+
+      function clamp01(v) { return Math.max(0, Math.min(1, v)); }
+
+      if (heroPinWrap && heroContent) {
+        var updateHeroText = function() {
+          var rect = heroPinWrap.getBoundingClientRect();
+          var scrollable = heroPinWrap.offsetHeight - window.innerHeight;
+          var progress = scrollable > 0 ? clamp01(-rect.top / scrollable) : 0;
+
+          // Fully faded by 40% scroll (end of Phase 2).
+          var fade = clamp01(1 - progress / 0.40);
+          heroContent.style.opacity = fade;
+          heroContent.style.transform = 'scale(' + (1 - 0.06 * (1 - fade)) + ')';
+          if (heroScroll) heroScroll.style.opacity = fade;
+        };
+
+        window.addEventListener('scroll', function() {
+          if (!ticking) {
+            window.requestAnimationFrame(function() {
+              updateHeroText();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }, { passive: true });
+        updateHeroText();
+      }
+
+      // --- Counter animation for stats (with +/- suffixes) ---
+      var statNumbers = document.querySelectorAll('.stat-number');
+      if (statNumbers.length > 0) {
+        var countersAnimated = false;
+
+        function animateCounters() {
+          if (countersAnimated) return;
+          countersAnimated = true;
+
+          statNumbers.forEach(function(el) {
+            var target = parseInt(el.getAttribute('data-target')) || 0;
+            var duration = 2000;
+            var startTime = null;
+
+            function updateCounter(currentTime) {
+              if (!startTime) startTime = currentTime;
+              var progress = Math.min((currentTime - startTime) / duration, 1);
+              var eased = 1 - Math.pow(1 - progress, 3);
+              var current = Math.floor(eased * target);
+              el.textContent = current;
+
+              if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+              } else {
+                el.textContent = target;
+              }
+            }
+
+            requestAnimationFrame(updateCounter);
+          });
+        }
+
+        var statsObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              animateCounters();
+              statsObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+
+        var statsBar = document.querySelector('.stats-bar');
+        if (statsBar) statsObserver.observe(statsBar);
+      }
+
+      // --- Fallback fade observer for scroll-driven animation support ---
+      if (!CSS.supports('animation-timeline', 'scroll()')) {
+        var revealElements = document.querySelectorAll(
+          '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-scale'
+        );
+        if (revealElements.length > 0 && 'IntersectionObserver' in window) {
+          var fallbackObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0) scale(1)';
+                fallbackObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
+
+          revealElements.forEach(function(el) {
+            el.style.opacity = '0';
+            fallbackObserver.observe(el);
+          });
+        }
+      }
+
+    })();
+  </script>
+
+  <!-- ========== Search Functionality ========== -->
+  <script>
+    (function() {
+      'use strict';
+
+      var searchBtn = document.getElementById('searchBtn');
+      var searchModal = document.getElementById('searchModal');
+      var searchClose = document.getElementById('searchClose');
+      var searchInput = document.getElementById('searchInput');
+      var searchResults = document.getElementById('searchResults');
+
+      // Open search modal
+      if (searchBtn) {
+        searchBtn.addEventListener('click', function() {
+          searchModal.classList.add('active');
+          setTimeout(function() {
+            searchInput.focus();
+          }, 100);
+        });
+      }
+
+      // Close search modal
+      function closeSearch() {
+        searchModal.classList.remove('active');
+        searchInput.value = '';
+        searchResults.innerHTML = '<p class="search-placeholder">Type to search across all pages...</p>';
+      }
+
+      if (searchClose) {
+        searchClose.addEventListener('click', closeSearch);
+      }
+
+      // Close on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && searchModal.classList.contains('active')) {
+          closeSearch();
+        }
+      });
+
+      // Close on backdrop click
+      searchModal.addEventListener('click', function(e) {
+        if (e.target === searchModal) {
+          closeSearch();
+        }
+      });
+
+      // Simple keyword search functionality
+      var searchableContent = [
+        { title: 'Home', url: 'index.html', keywords: 'lanmodulin terbium rare earth recovery e-waste fluorescent lamp protein engineering' },
+        { title: 'Project Description', url: 'description.html', keywords: 'problem solution terbium scarcity e-waste challenges green solution' },
+        { title: 'Design', url: 'design.html', keywords: 'tryptophan sensitized variants binding luminescence rational design' },
+        { title: 'Engineering', url: 'engineering.html', keywords: 'design build test learn cycle gene synthesis protein purification characterization' },
+        { title: 'Results', url: 'results.html', keywords: 'binding curves luminescence spectra selectivity assays leachate recovery data' },
+        { title: 'Parts', url: 'parts.html', keywords: 'biobrick parts registry plasmids sequences' },
+        { title: 'Safety', url: 'safety.html', keywords: 'responsible handling biosafety protocols environmental considerations' },
+        { title: 'Human Practices', url: 'human-practices.html', keywords: 'engagement recyclers industry experts community stakeholder' },
+        { title: 'Team', url: 'team.html', keywords: 'members students researchers advisors' },
+        { title: 'Collaborations', url: 'collaborations.html', keywords: 'partnerships collaboration teams institutions' },
+        { title: 'Attributions', url: 'attributions.html', keywords: 'acknowledgments sponsors support contributors' }
+      ];
+
+      // Search input handler
+      if (searchInput) {
+        searchInput.addEventListener('input', function() {
+          var query = searchInput.value.toLowerCase().trim();
+
+          if (query.length === 0) {
+            searchResults.innerHTML = '<p class="search-placeholder">Type to search across all pages...</p>';
+            return;
+          }
+
+          var results = searchableContent.filter(function(item) {
+            return item.title.toLowerCase().includes(query) ||
+                   item.keywords.toLowerCase().includes(query);
+          });
+
+          if (results.length === 0) {
+            searchResults.innerHTML = '<p class="search-placeholder">No results found for "' + query + '"</p>';
+            return;
+          }
+
+          var html = '';
+          results.forEach(function(item) {
+            var snippet = item.keywords.split(' ').slice(0, 10).join(' ') + '...';
+            html += '<div class="search-result-item" onclick="window.location.href=\'' + item.url + '\'">' +
+                    '<div class="search-result-title">' + item.title + '</div>' +
+                    '<div class="search-result-snippet">' + snippet + '</div>' +
+                    '<div class="search-result-page">' + item.url + '</div>' +
+                    '</div>';
+          });
+          searchResults.innerHTML = html;
+        });
+      }
+
+    })();
+  </script>
+
+  <!-- ========== Hero Scroll State Machine (Terbium narrative) ========== -->
+  <script src="js/particle-animation.js"></script>
+</body>
+</html>
